@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">AT SOPT ANDROID</string>
+
+    <!-- SignIn/Up   -->
+    <string name="id_text">아이디</string>
+    <string name="password_text">비밀번호</string>
+
+    <string name="sign_in_title">TVING ID 로그인</string>
+    <string name="sign_in_button">로그인하기</string>
+    <string name="sign_in_find_id">아이디 찾기</string>
+    <string name="sign_in_find_password">비밀번호 찾기</string>
+    <string name="vertical_bar">|</string>
+    <string name="sign_in_policy">이 사이트는 Google reCAPTCHA로 보호되며,\n<u>Google 개인정보 처리방침</u>과 <u>서비스 약관</u>이 적용됩니다.</string>
+    <string name="sign_in_error">로그인 정보가 맞지 않습니다. 다시 입력해주세요.</string>
+
+    <string name="sign_up">회원가입</string>
+    <string name="sign_up_id_title">아이디를 입력해주세요.</string>
+    <string name="sign_up_id_description">영문 소문자 또는 영문 소문자, 숫자 조합 6~12 자리</string>
+    <string name="next">다음</string>
+    <string name="sign_up_password_title">비밀번호를 입력해주세요.</string>
+    <string name="sign_up_password_description">영문, 숫자, 특수문자(~!@#$%^&amp;*) 조합 8~15자리</string>
+    <string name="sign_up_id_error">아이디 형식이 맞지 않습니다.\n다시 입력해주세요.</string>
+    <string name="sign_up_password_error">비밀번호 형식이 맞지 않습니다.\n다시 입력해주세요.</string>
+
+    <!-- My   -->
+    <string name="profile">프로필</string>
+    <string name="profile_switch">프로필 전환</string>
+    <string name="my_ticket">나의 이용권</string>
+    <string name="my_ticket_empty">사용중인 이용권이 없습니다</string>
+    <string name="tving_cash">티빙캐시</string>
+    <string name="sign_out">로그아웃</string>
+
 </resources>
