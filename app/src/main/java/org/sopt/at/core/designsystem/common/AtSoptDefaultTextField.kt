@@ -77,7 +77,7 @@ fun AtSoptDefaultTextField(
                             text = hint,
                             style = hintTextStyle.copy(
                                 color = hintTextColor,
-                            )
+                            ),
                         )
                     }
                     innerTextField()

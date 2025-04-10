@@ -24,7 +24,7 @@ fun AtSoptDefaultButton(
     title: String,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-    enabled: Boolean = false,
+    enabled: Boolean = true,
     shape: Shape = MaterialTheme.shapes.extraSmall,
     contentColor: Color = AtSoptTheme.colors.gray200,
     containerColor: Color = AtSoptTheme.colors.gray400,

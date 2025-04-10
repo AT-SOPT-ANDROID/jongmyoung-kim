@@ -104,12 +104,6 @@ fun SignInScreen(
             text = passwordText,
             onTextChange = onPasswordChange,
             hint = stringResource(password_text),
-            keyboardOptions = KeyboardOptions(
-                imeAction = ImeAction.Done,
-            ),
-            keyboardActions = KeyboardActions(
-                onDone = { focusManager.clearFocus() },
-            ),
             visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
             suffix = {
                 Icon(
