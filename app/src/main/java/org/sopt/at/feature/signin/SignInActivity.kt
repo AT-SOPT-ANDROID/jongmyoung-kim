@@ -62,7 +62,7 @@ class SignInActivity : ComponentActivity() {
                         passwordText = password,
                         onPasswordChange = { password = it },
                         onSignInClick = { signIn(id, password, snackbarHostState, coroutineScope) },
-                        navigateToSignUp = { navigateToSignUp() },
+                        navigateToSignUp = ::navigateToSignUp,
                         modifier = Modifier.padding(innerPadding),
                     )
                 }

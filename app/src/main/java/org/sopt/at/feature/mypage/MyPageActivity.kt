@@ -32,7 +32,7 @@ class MyPageActivity : ComponentActivity() {
                     ) {
                         AtSoptDefaultButton(
                             title = stringResource(sign_out),
-                            onClick = { signOut() },
+                            onClick = ::signOut,
                         )
                     }
                 }

@@ -70,7 +70,7 @@ class SignUpActivity : ComponentActivity() {
 
     private fun String.isValidEmail(): Boolean = EMAIL_REGEX.matches(this)
 
-    fun String.isValidPassword(): Boolean = PASSWORD_REGEX.matches(this)
+    private fun String.isValidPassword(): Boolean = PASSWORD_REGEX.matches(this)
 
     companion object { // TODO: 1주차 과제용, 삭제 예정
         val EMAIL_REGEX = "^[a-z0-9]{6,12}$".toRegex()
