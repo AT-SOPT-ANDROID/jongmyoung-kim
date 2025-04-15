@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">AT SOPT ANDROID</string>
 
+    <!-- Home   -->
+    <string name="ic_home_desc">HOME</string>
+
+    <!-- Shorts   -->
+    <string name="ic_shorts_desc">Shorts</string>
+
+    <!-- Live   -->
+    <string name="ic_live_desc">LIVE</string>
+
+    <!-- Search   -->
+    <string name="ic_search_desc">SEARCH</string>
+
+    <!-- History   -->
+    <string name="ic_history_desc">HISTORY</string>
+
     <!-- SignIn/Up   -->
     <string name="id_text">아이디</string>
     <string name="password_text">비밀번호</string>
