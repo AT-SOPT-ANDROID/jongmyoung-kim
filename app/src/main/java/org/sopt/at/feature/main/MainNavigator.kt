@@ -12,7 +12,6 @@ import org.sopt.at.feature.history.navigation.navigateToHistory
 import org.sopt.at.feature.home.navigation.Home
 import org.sopt.at.feature.home.navigation.navigateToHome
 import org.sopt.at.feature.live.navigation.navigateToLive
-import org.sopt.at.feature.main.type.MainTab
 import org.sopt.at.feature.search.navigation.navigateToSearch
 import org.sopt.at.feature.shorts.navigation.navigateToShorts
 

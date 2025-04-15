@@ -1,4 +1,4 @@
-package org.sopt.at.feature.main.type
+package org.sopt.at.feature.main
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
@@ -23,9 +23,10 @@ import org.sopt.at.core.common.navigation.Route
 import org.sopt.at.feature.history.navigation.History
 import org.sopt.at.feature.home.navigation.Home
 import org.sopt.at.feature.live.navigation.Live
-import org.sopt.at.feature.main.type.MainTab.entries
+import org.sopt.at.feature.main.MainTab.entries
 import org.sopt.at.feature.search.navigation.Search
 import org.sopt.at.feature.shorts.navigation.Shorts
+
 
 enum class MainTab(
     @DrawableRes val selectedIcon: Int,
