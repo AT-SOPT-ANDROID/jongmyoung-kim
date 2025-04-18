@@ -2,19 +2,26 @@
     <string name="app_name">AT SOPT ANDROID</string>
 
     <!-- Home   -->
-    <string name="ic_home_desc">HOME</string>
+    <string name="ic_home_desc">홈</string>
+    <string name="see_more">더보기</string>
+    <string name="home_large_banner_1">오늘의 티빙 TOP 20</string>
+    <string name="home_large_banner_2">실시간 인기 애니메이션</string>
+    <string name="home_small_banner_1">지금 방영 중인 콘텐츠</string>
+    <string name="home_small_banner_2">웹툰을 찢고 나온 오빠들</string>
+    <string name="home_small_banner_3">티빙 NEW! 공개 예정 콘텐츠</string>
+    <string name="home_small_banner_4">이승과 저승 사이 판타지</string>
 
     <!-- Shorts   -->
-    <string name="ic_shorts_desc">Shorts</string>
+    <string name="ic_shorts_desc">쇼츠</string>
 
     <!-- Live   -->
-    <string name="ic_live_desc">LIVE</string>
+    <string name="ic_live_desc">라이브</string>
 
     <!-- Search   -->
-    <string name="ic_search_desc">SEARCH</string>
+    <string name="ic_search_desc">검색</string>
 
     <!-- History   -->
-    <string name="ic_history_desc">HISTORY</string>
+    <string name="ic_history_desc">기록</string>
 
     <!-- SignIn/Up   -->
     <string name="id_text">아이디</string>
