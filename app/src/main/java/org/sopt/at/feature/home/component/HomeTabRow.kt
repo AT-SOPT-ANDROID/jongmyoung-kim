@@ -1,6 +1,8 @@
 package org.sopt.at.feature.home.component
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -30,9 +32,12 @@ fun HomeTabRow(
     modifier: Modifier = Modifier,
 ) {
     LazyRow(
-        modifier = modifier,
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp),
+        horizontalArrangement = Arrangement.SpaceAround,
         verticalAlignment = Alignment.CenterVertically,
+        contentPadding = PaddingValues(horizontal = 12.dp),
     ) {
         itemsIndexed(
             items = homeTabs,
@@ -60,7 +65,7 @@ private fun HomeTabItem(
     modifier: Modifier = Modifier,
 ) {
     Text(
-        text = genreTab.name,
+        text = genreTab.genre,
         style = MaterialTheme.typography.titleMedium.copy(
             color = if (isSelected) AtSoptTheme.colors.white else AtSoptTheme.colors.gray100,
         ),
