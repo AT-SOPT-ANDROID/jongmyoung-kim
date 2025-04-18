@@ -31,7 +31,7 @@ fun HomeVodButtonRow(
     LazyRow(
         modifier = modifier,
         horizontalArrangement = Arrangement.spacedBy(8.dp),
-        contentPadding = PaddingValues(horizontal = 12.dp),
+        contentPadding = PaddingValues(horizontal = 20.dp),
     ) {
         itemsIndexed(
             items = vodButtons,
@@ -52,34 +52,42 @@ private fun HomeVodButtonMapper(
     when (button) {
         HomeVodType.KBO -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2025/03/23/1742719432_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
 
         HomeVodType.APPLE -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2025/04/16/1744771892_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
 
         HomeVodType.KBL -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2024/12/10/1733821492_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
 
         HomeVodType.KIDS -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2024/10/21/1729475548_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
-
+        
         HomeVodType.UFC -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2023/10/19/1697689505_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
 
         HomeVodType.CHAMPS_LEAGUE -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2024/09/19/1726753837_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
 
         HomeVodType.TENNIS -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2024/09/23/1727035728_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
 
         HomeVodType.STYLE_COLLECTION -> HomeVodButton(
             icon = "https://image.tving.com/ntgs/operation/specialHall/2024/10/07/1728293421_1.png/dims/resize/F_webp,400",
+            modifier = modifier,
         )
     }
 }
