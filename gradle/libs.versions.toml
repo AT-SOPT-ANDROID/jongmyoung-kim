@@ -17,6 +17,7 @@ composeNavigation = "2.8.5"
 hilt = "2.51.1"
 hiltManager = "1.2.0"
 
+glideCompose = "1.0.0-beta01"
 glide = "4.16.0"
 
 junit = "4.13.2"
@@ -44,8 +45,9 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
 # glide
-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
-glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide"}
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+glide-compose = { group = "com.github.bumptech.glide", name = "compose", version.ref = "glideCompose" }
 
 # hilt
 hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }

@@ -81,4 +81,5 @@ dependencies {
     // glide
     implementation(libs.glide)
     ksp(libs.glide.compiler)
+    implementation(libs.glide.compose)
 }
