@@ -11,7 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import org.sopt.at.R.string.ic_live_desc
+import org.sopt.at.R.string.ic_shorts_desc
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 import org.sopt.at.core.designsystem.theme.AtSoptTheme
 
@@ -36,7 +36,7 @@ fun ShortsScreen(
         verticalArrangement = Arrangement.Center,
     ) {
         Text(
-            text = stringResource(ic_live_desc),
+            text = stringResource(ic_shorts_desc),
             style = MaterialTheme.typography.displayLarge.copy(
                 color = AtSoptTheme.colors.white,
             ),
