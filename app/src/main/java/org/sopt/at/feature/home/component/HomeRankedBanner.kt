@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -117,9 +118,8 @@ private fun RankedBannerItem(
             model = bannerUrl,
             contentDescription = null,
             modifier = Modifier.clip(RoundedCornerShape(8.dp)),
-        ) {
-            it.fitCenter()
-        }
+            contentScale = ContentScale.Fit,
+        )
     }
 }
 

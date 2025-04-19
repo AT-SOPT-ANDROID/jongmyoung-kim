@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -84,9 +85,8 @@ fun HomeSmallBanner(
                     modifier = Modifier
                         .padding(start = startPadding, end = endPadding)
                         .clip(RoundedCornerShape(8.dp)),
-                ) {
-                    it.fitCenter()
-                }
+                    contentScale = ContentScale.Fit,
+                )
             }
         }
     }

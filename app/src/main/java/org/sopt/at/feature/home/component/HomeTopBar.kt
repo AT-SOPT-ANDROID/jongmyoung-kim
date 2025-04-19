@@ -3,6 +3,7 @@ package org.sopt.at.feature.home.component
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -27,7 +28,9 @@ fun HomeTopBar(
     modifier: Modifier = Modifier,
 ) {
     AtSoptDefaultTopBar(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(top = 20.dp),
         leadingIcon = {
             Icon(
                 imageVector = ImageVector.vectorResource(logo_tving),
