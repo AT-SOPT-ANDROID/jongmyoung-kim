@@ -100,8 +100,8 @@ private fun HomeVodButton(
 ) {
     val gradientColor = Brush.verticalGradient(
         colors = listOf(
-            AtSoptTheme.colors.gray500.copy(alpha = .9f),
-            AtSoptTheme.colors.gray600.copy(alpha = .1f),
+            AtSoptTheme.colors.gray500.copy(alpha = 1f),
+            AtSoptTheme.colors.gray600.copy(alpha = .8f),
         ),
     )
 
@@ -111,7 +111,7 @@ private fun HomeVodButton(
         modifier = modifier
             .clip(RoundedCornerShape(4.dp))
             .background(gradientColor)
-            .padding(horizontal = 16.dp, vertical = 14.dp)
+            .padding(horizontal = 20.dp, vertical = 18.dp)
             .width(68.dp)
             .aspectRatio(2f),
     )

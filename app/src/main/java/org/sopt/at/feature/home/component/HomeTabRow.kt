@@ -27,7 +27,7 @@ import org.sopt.at.core.util.noRippleClickable
 @Composable
 fun HomeTabRow(
     homeTabs: ImmutableList<HomeGenreType>,
-    selectedTab: HomeGenreType,
+    selectedTab: HomeGenreType?,
     onSelectTab: (HomeGenreType) -> Unit,
     modifier: Modifier = Modifier,
 ) {

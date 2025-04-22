@@ -17,7 +17,7 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import org.sopt.at.R.drawable.ic_cast
 import org.sopt.at.R.drawable.img_profile_placeholder
-import org.sopt.at.R.drawable.logo_tving
+import org.sopt.at.R.drawable.ic_tving_logo
 import org.sopt.at.core.designsystem.common.AtSoptDefaultTopBar
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 
@@ -33,7 +33,7 @@ fun HomeTopBar(
             .padding(top = 20.dp),
         leadingIcon = {
             Icon(
-                imageVector = ImageVector.vectorResource(logo_tving),
+                imageVector = ImageVector.vectorResource(ic_tving_logo),
                 contentDescription = null,
                 tint = Color.Unspecified,
             )
