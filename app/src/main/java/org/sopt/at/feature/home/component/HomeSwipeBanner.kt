@@ -18,26 +18,26 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.Priority
-import com.bumptech.glide.integration.compose.CrossFade
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
-import com.bumptech.glide.integration.compose.GlideImage
-import com.bumptech.glide.load.engine.DiskCacheStrategy
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import org.sopt.at.R.drawable.ic_tving_original
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun HomeSwipeBanner(
     bannerUrls: ImmutableList<Pair<String, String>>,
     pagerState: PagerState,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
+
     HorizontalPager(
         state = pagerState,
         modifier = modifier,
@@ -48,8 +48,11 @@ fun HomeSwipeBanner(
         Box(
             modifier = Modifier,
         ) {
-            GlideImage(
-                model = bannerUrls[it].first,
+            AsyncImage(
+                model = ImageRequest.Builder(context)
+                    .data(bannerUrls[it].first)
+                    .crossfade(true)
+                    .build(),
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -57,12 +60,7 @@ fun HomeSwipeBanner(
                     .aspectRatio(.8f),
                 contentScale = ContentScale.FillWidth,
                 alignment = Alignment.TopCenter,
-                transition = CrossFade,
-            ) { requestBuilder ->
-                requestBuilder
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .priority(Priority.HIGH)
-            }
+            )
 
             Column(
                 modifier = Modifier
@@ -78,15 +76,13 @@ fun HomeSwipeBanner(
                     tint = Color.Unspecified,
                 )
 
-                GlideImage(
-                    model = bannerUrls[it].second,
+                AsyncImage(
+                    model = ImageRequest.Builder(context)
+                        .data(bannerUrls[it].second)
+                        .crossfade(true)
+                        .build(),
                     contentDescription = null,
-                    transition = CrossFade,
-                ) { requestBuilder ->
-                    requestBuilder
-                        .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .priority(Priority.HIGH)
-                }
+                )
             }
         }
     }

@@ -14,11 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
-import com.bumptech.glide.integration.compose.GlideImage
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
+import coil3.request.placeholder
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -42,6 +45,7 @@ import org.sopt.at.R.drawable.ic_rank_three
 import org.sopt.at.R.drawable.ic_rank_twelve
 import org.sopt.at.R.drawable.ic_rank_twenty
 import org.sopt.at.R.drawable.ic_rank_two
+import org.sopt.at.R.drawable.img_profile_placeholder
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 import org.sopt.at.core.designsystem.theme.AtSoptTheme
 
@@ -96,13 +100,14 @@ fun HomeRankedBanner(
     }
 }
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 private fun RankedBannerItem(
     bannerUrl: String,
     @DrawableRes bannerIndexIcon: Int,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
+
     Row(
         modifier = modifier,
         horizontalArrangement = Arrangement.spacedBy(4.dp),
@@ -114,8 +119,11 @@ private fun RankedBannerItem(
             tint = AtSoptTheme.colors.white,
             modifier = Modifier,
         )
-        GlideImage(
-            model = bannerUrl,
+        AsyncImage(
+            model = ImageRequest.Builder(context)
+                .data(bannerUrl)
+                .crossfade(true)
+                .build(),
             contentDescription = null,
             modifier = Modifier.clip(RoundedCornerShape(8.dp)),
             contentScale = ContentScale.Fit,

@@ -10,23 +10,29 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
-import com.bumptech.glide.integration.compose.GlideImage
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
+import coil3.request.error
 import org.sopt.at.R.drawable.ic_cast
-import org.sopt.at.R.drawable.img_profile_placeholder
 import org.sopt.at.R.drawable.ic_tving_logo
+import org.sopt.at.R.drawable.img_profile_placeholder
 import org.sopt.at.core.designsystem.common.AtSoptDefaultTopBar
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
+import org.sopt.at.core.util.noRippleClickable
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun HomeTopBar(
     profileImageUrl: String,
+    onProfileImageClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
+
     AtSoptDefaultTopBar(
         modifier = modifier
             .fillMaxWidth()
@@ -48,13 +54,17 @@ fun HomeTopBar(
                     contentDescription = null,
                     tint = Color.Unspecified,
                 )
-                GlideImage(
-                    model = profileImageUrl,
+                AsyncImage(
+                    model = ImageRequest.Builder(context)
+                        .data(profileImageUrl.takeIf { it.isNotBlank() })
+                        .crossfade(true)
+                        .error(img_profile_placeholder)
+                        .build(),
                     contentDescription = null,
-                    modifier = Modifier.size(24.dp),
-                ) {
-                    it.placeholder(img_profile_placeholder)
-                }
+                    modifier = Modifier
+                        .size(24.dp)
+                        .noRippleClickable(onProfileImageClick),
+                )
             }
         }
     )
@@ -66,7 +76,7 @@ private fun HomeTopBarPreview() {
     ATSOPTANDROIDTheme {
         HomeTopBar(
             profileImageUrl = "",
-            modifier = Modifier.fillMaxWidth()
+            onProfileImageClick = {},
         )
     }
 }

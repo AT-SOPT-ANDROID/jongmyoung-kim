@@ -13,10 +13,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
-import com.bumptech.glide.integration.compose.GlideImage
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import org.sopt.at.core.common.type.HomeVodType
@@ -92,7 +94,6 @@ private fun HomeVodButtonMapper(
     }
 }
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 private fun HomeVodButton(
     icon: String,
@@ -104,9 +105,13 @@ private fun HomeVodButton(
             AtSoptTheme.colors.gray600.copy(alpha = .8f),
         ),
     )
+    val context = LocalContext.current
 
-    GlideImage(
-        model = icon,
+    AsyncImage(
+        model = ImageRequest.Builder(context)
+            .data(icon)
+            .crossfade(true)
+            .build(),
         contentDescription = null,
         modifier = modifier
             .clip(RoundedCornerShape(4.dp))

@@ -78,8 +78,7 @@ dependencies {
     ksp(libs.hilt.android.compiler)
     ksp(libs.hilt.manager)
 
-    // glide
-    implementation(libs.glide)
-    ksp(libs.glide.compiler)
-    implementation(libs.glide.compose)
+    // coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network)
 }

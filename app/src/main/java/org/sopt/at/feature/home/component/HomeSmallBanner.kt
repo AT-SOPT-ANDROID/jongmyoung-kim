@@ -17,12 +17,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
-import com.bumptech.glide.integration.compose.GlideImage
+import coil3.compose.AsyncImage
+import coil3.request.ImageRequest
+import coil3.request.crossfade
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import org.sopt.at.R.string.see_more
@@ -30,7 +32,6 @@ import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 import org.sopt.at.core.designsystem.theme.AtSoptTheme
 import org.sopt.at.core.util.noRippleClickable
 
-@OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun HomeSmallBanner(
     title: String,
@@ -38,6 +39,8 @@ fun HomeSmallBanner(
     smallBannerUrls: ImmutableList<String>,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
+
     Column(
         modifier = modifier,
     ) {
@@ -79,8 +82,11 @@ fun HomeSmallBanner(
                 val startPadding = if (index == 0) 20.dp else 0.dp
                 val endPadding = if (index == smallBannerUrls.lastIndex) 20.dp else 0.dp
 
-                GlideImage(
-                    model = bannerUrl,
+                AsyncImage(
+                    model = ImageRequest.Builder(context)
+                        .data(bannerUrl)
+                        .crossfade(true)
+                        .build(),
                     contentDescription = null,
                     modifier = Modifier
                         .padding(start = startPadding, end = endPadding)
