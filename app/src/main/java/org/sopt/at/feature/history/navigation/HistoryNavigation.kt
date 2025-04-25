@@ -7,6 +7,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import kotlinx.serialization.Serializable
 import org.sopt.at.core.common.navigation.MainTabRoute
+import org.sopt.at.feature.history.HistoryRoute
 
 fun NavController.navigateToHistory(navOptions: NavOptions? = null) = navigate(History, navOptions)
 
@@ -14,7 +15,9 @@ fun NavGraphBuilder.historyGraph(
     modifier: Modifier = Modifier,
 ) {
     composable<History> {
-
+        HistoryRoute(
+            modifier = modifier,
+        )
     }
 }
 
