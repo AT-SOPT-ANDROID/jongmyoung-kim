@@ -12,10 +12,14 @@ import org.sopt.at.feature.home.HomeRoute
 fun NavController.navigateToHome(navOptions: NavOptions? = null) = navigate(Home, navOptions)
 
 fun NavGraphBuilder.homeGraph(
+    navigateToMyPage: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     composable<Home> {
-        HomeRoute()
+        HomeRoute(
+            navigateToMyPage = navigateToMyPage,
+            modifier = modifier,
+        )
     }
 }
 
