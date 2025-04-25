@@ -33,10 +33,14 @@ import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 @Composable
 fun HomeSwipeBanner(
     bannerUrls: ImmutableList<Pair<String, String>>,
-    pagerState: PagerState,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
+
+    val pagerState = rememberPagerState(
+        initialPage = 0,
+        pageCount = { bannerUrls.size }
+    )
 
     HorizontalPager(
         state = pagerState,
@@ -94,10 +98,6 @@ private fun HomeSwipeBannerPreview() {
     ATSOPTANDROIDTheme {
         HomeSwipeBanner(
             bannerUrls = persistentListOf(),
-            pagerState = rememberPagerState(
-                initialPage = 0,
-                pageCount = { 5 }
-            ),
         )
     }
 }
