@@ -47,6 +47,7 @@ import org.sopt.at.feature.signup.state.SignUpState
 @Composable
 fun SignUpRoute(
     navigateToSignIn: () -> Unit,
+    navigateUp: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: SignUpViewModel = hiltViewModel(),
 ) {
@@ -79,7 +80,7 @@ fun SignUpRoute(
         signUpState = uiState,
         onIdChange = viewModel::updateId,
         onPasswordChange = viewModel::updatePassword,
-        navigateUp = { if (uiState.page == 0) navigateToSignIn() else viewModel.updatePage(-1) },
+        navigateUp = { if (uiState.page == 0) navigateUp() else viewModel.updatePage(-1) },
         onSignUpClick = viewModel::signUp,
         modifier = modifier,
     )

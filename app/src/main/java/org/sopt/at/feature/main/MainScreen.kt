@@ -10,18 +10,24 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
+import androidx.navigation.navOptions
 import kotlinx.collections.immutable.toImmutableList
 import org.sopt.at.core.designsystem.theme.AtSoptTheme
 import org.sopt.at.feature.history.navigation.historyGraph
 import org.sopt.at.feature.home.navigation.homeGraph
+import org.sopt.at.feature.home.navigation.navigateToHome
 import org.sopt.at.feature.live.navigation.liveGraph
 import org.sopt.at.feature.main.component.MainBottomBar
 import org.sopt.at.feature.mypage.navigation.myPageGraph
 import org.sopt.at.feature.mypage.navigation.navigateToMyPage
 import org.sopt.at.feature.search.navigation.searchGraph
 import org.sopt.at.feature.shorts.navigation.shortsGraph
+import org.sopt.at.feature.signin.navigation.SignIn
+import org.sopt.at.feature.signin.navigation.navigateToSignIn
 import org.sopt.at.feature.signin.navigation.signInGraph
+import org.sopt.at.feature.signup.navigation.navigateToSignUp
 import org.sopt.at.feature.signup.navigation.signUpGraph
 
 @Composable
@@ -86,14 +92,27 @@ private fun MainNavHost(
         )
 
         myPageGraph(
+            navigateToSignIn = {
+                val navOptions = navOptions {
+                    popUpTo(navigator.navController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                    launchSingleTop = true
+                }
+                navigator.navController.navigateToSignIn(navOptions)
+            },
             modifier = modifier,
         )
 
         signInGraph(
+            navigateToSignUp = navigator.navController::navigateToSignUp,
+            navigateToHome = navigator.navController::navigateToHome,
             modifier = modifier,
         )
 
         signUpGraph(
+            navigateToSignIn = navigator.navController::navigateToSignIn,
+            navigateUp = navigator.navController::navigateUp,
             modifier = modifier,
         )
     }
