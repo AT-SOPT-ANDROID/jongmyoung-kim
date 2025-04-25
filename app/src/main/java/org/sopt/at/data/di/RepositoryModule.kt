@@ -4,6 +4,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import org.sopt.at.data.repositoryimpl.AuthRepositoryImpl
 import org.sopt.at.data.repositoryimpl.HomeRepositoryImpl
 import org.sopt.at.data.repositoryimpl.UserRepositoryImpl
 import org.sopt.at.domain.repository.AuthRepository
@@ -26,4 +27,12 @@ abstract class RepositoryModule {
     abstract fun bindUserRepository(
         userRepositoryImpl: UserRepositoryImpl,
     ): UserRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindAuthRepository(
+        authRepositoryImpl: AuthRepositoryImpl,
+    ): AuthRepository
+
+
 }
