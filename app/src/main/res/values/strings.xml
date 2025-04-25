@@ -34,6 +34,7 @@
     <string name="vertical_bar">|</string>
     <string name="sign_in_policy">이 사이트는 Google reCAPTCHA로 보호되며,\n<u>Google 개인정보 처리방침</u>과 <u>서비스 약관</u>이 적용됩니다.</string>
     <string name="sign_in_error">로그인 정보가 맞지 않습니다. 다시 입력해주세요.</string>
+    <string name="sign_in_success">로그인 성공!</string>
 
     <string name="sign_up">회원가입</string>
     <string name="sign_up_id_title">아이디를 입력해주세요.</string>
@@ -43,6 +44,8 @@
     <string name="sign_up_password_description">영문, 숫자, 특수문자(~!@#$%^&amp;*) 조합 8~15자리</string>
     <string name="sign_up_id_error">아이디 형식이 맞지 않습니다.\n다시 입력해주세요.</string>
     <string name="sign_up_password_error">비밀번호 형식이 맞지 않습니다.\n다시 입력해주세요.</string>
+    <string name="sign_up_success">회원가입 성공!</string>
+    <string name="sign_up_error">회원가입 실패. 다시 시도해주세요.</string>
 
     <!-- My   -->
     <string name="profile">프로필</string>
