@@ -1,6 +1,8 @@
 package org.sopt.at.feature.main.component
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.EnterTransition
+import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideIn
@@ -49,8 +51,8 @@ fun MainBottomBar(
 ) {
     AnimatedVisibility(
         visible = isVisible,
-        enter = fadeIn() + slideIn { IntOffset(0, 0) },
-        exit = fadeOut() + slideOut { IntOffset(0, 0) },
+        enter = EnterTransition.None,
+        exit = ExitTransition.None,
     ) {
         Surface(
             color = AtSoptTheme.colors.black,
