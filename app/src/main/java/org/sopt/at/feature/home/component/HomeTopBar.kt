@@ -29,6 +29,7 @@ import org.sopt.at.core.util.noRippleClickable
 fun HomeTopBar(
     profileImageUrl: String,
     onProfileImageClick: () -> Unit,
+    onTvingLogoClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
@@ -42,6 +43,7 @@ fun HomeTopBar(
                 imageVector = ImageVector.vectorResource(ic_tving_logo),
                 contentDescription = null,
                 tint = Color.Unspecified,
+                modifier = Modifier.noRippleClickable(onTvingLogoClick)
             )
         },
         trailingIcon = {
@@ -77,6 +79,7 @@ private fun HomeTopBarPreview() {
         HomeTopBar(
             profileImageUrl = "",
             onProfileImageClick = {},
+            onTvingLogoClick = {},
         )
     }
 }

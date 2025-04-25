@@ -28,7 +28,7 @@ import org.sopt.at.core.util.noRippleClickable
 fun HomeTabRow(
     homeTabs: ImmutableList<HomeGenreType>,
     selectedTab: HomeGenreType?,
-    onSelectTab: (HomeGenreType) -> Unit,
+    onSelectTab: (HomeGenreType?) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyRow(
@@ -46,7 +46,7 @@ fun HomeTabRow(
             HomeTabItem(
                 genreTab = tab,
                 isSelected = tab == selectedTab,
-                onSelectTab = onSelectTab,
+                onSelectTab = { onSelectTab(tab) },
                 modifier = Modifier
                     .padding(
                         start = if (index == 0) 12.dp else 0.dp,
@@ -84,7 +84,7 @@ private fun HomeTabRowPreview() {
         HomeTabRow(
             homeTabs = HomeGenreType.entries.toImmutableList(),
             selectedTab = selectedTab,
-            onSelectTab = { selectedTab = it },
+            onSelectTab = { },
             modifier = Modifier,
         )
     }
