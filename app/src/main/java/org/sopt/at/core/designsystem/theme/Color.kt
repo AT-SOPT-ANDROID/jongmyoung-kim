@@ -11,6 +11,7 @@ val primary = Color(0xFFFF153C)
 
 // gray scale
 val black = Color(0xFF000000)
+val gray600 = Color(0xFF191919)
 val gray500 = Color(0xFF262626)
 val gray400 = Color(0xFF404040)
 val gray300 = Color(0xFF737373)
@@ -22,6 +23,7 @@ val white = Color(0xFFFFFFFF)
 class AtSoptColors(
     primary: Color,
     black: Color,
+    gray600: Color,
     gray500: Color,
     gray400: Color,
     gray300: Color,
@@ -33,6 +35,8 @@ class AtSoptColors(
     var primary by mutableStateOf(primary)
         private set
     var black by mutableStateOf(black)
+        private set
+    var gray600 by mutableStateOf(gray600)
         private set
     var gray500 by mutableStateOf(gray500)
         private set
@@ -51,6 +55,7 @@ class AtSoptColors(
     fun copy(): AtSoptColors = AtSoptColors(
         primary,
         black,
+        gray600,
         gray500,
         gray400,
         gray300,
@@ -63,6 +68,7 @@ class AtSoptColors(
     fun update(other: AtSoptColors) {
         primary = other.primary
         black = other.black
+        gray600 = other.gray600
         gray500 = other.gray500
         gray400 = other.gray400
         gray300 = other.gray300
@@ -76,6 +82,7 @@ class AtSoptColors(
 fun AtSoptLightColors(
     Primary: Color = primary,
     Black: Color = black,
+    Gray600: Color = gray600,
     Gray500: Color = gray500,
     Gray400: Color = gray400,
     Gray300: Color = gray300,
@@ -85,6 +92,7 @@ fun AtSoptLightColors(
 ) = AtSoptColors(
     Primary,
     Black,
+    Gray600,
     Gray500,
     Gray400,
     Gray300,
