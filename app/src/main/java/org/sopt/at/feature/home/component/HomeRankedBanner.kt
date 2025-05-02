@@ -21,7 +21,6 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.crossfade
-import coil3.request.placeholder
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
@@ -45,7 +44,6 @@ import org.sopt.at.R.drawable.ic_rank_three
 import org.sopt.at.R.drawable.ic_rank_twelve
 import org.sopt.at.R.drawable.ic_rank_twenty
 import org.sopt.at.R.drawable.ic_rank_two
-import org.sopt.at.R.drawable.img_profile_placeholder
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 import org.sopt.at.core.designsystem.theme.AtSoptTheme
 

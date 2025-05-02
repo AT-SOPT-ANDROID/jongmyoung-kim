@@ -11,7 +11,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
@@ -28,14 +27,14 @@ import org.sopt.at.R.drawable.ic_back
 import org.sopt.at.R.string.id_text
 import org.sopt.at.R.string.next
 import org.sopt.at.R.string.password_text
-import org.sopt.at.R.string.sign_up_id_error
-import org.sopt.at.R.string.sign_up_password_error
-import org.sopt.at.R.string.sign_up_success
-import org.sopt.at.R.string.sign_up_id_description
 import org.sopt.at.R.string.sign_up_error
+import org.sopt.at.R.string.sign_up_id_description
+import org.sopt.at.R.string.sign_up_id_error
 import org.sopt.at.R.string.sign_up_id_title
 import org.sopt.at.R.string.sign_up_password_description
+import org.sopt.at.R.string.sign_up_password_error
 import org.sopt.at.R.string.sign_up_password_title
+import org.sopt.at.R.string.sign_up_success
 import org.sopt.at.core.designsystem.common.AtSoptDefaultButton
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
 import org.sopt.at.core.designsystem.theme.AtSoptTheme
