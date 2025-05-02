@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -43,8 +42,7 @@ fun SignUpContent(
         text = title,
         modifier = Modifier
             .fillMaxWidth(),
-        style = MaterialTheme.typography.titleLarge.copy(
-            fontWeight = FontWeight(500),
+        style = AtSoptTheme.typography.body16m.copy(
             color = AtSoptTheme.colors.white,
         ),
         textAlign = TextAlign.Center,
@@ -78,7 +76,7 @@ fun SignUpContent(
 
     Text(
         text = description,
-        style = MaterialTheme.typography.labelMedium.copy(
+        style = AtSoptTheme.typography.label12m.copy(
             color = AtSoptTheme.colors.gray300,
         )
     )

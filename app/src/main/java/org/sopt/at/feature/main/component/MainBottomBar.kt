@@ -90,8 +90,8 @@ private fun MainNavigationBarItem(
     val iconRes = if (selected) tab.selectedIcon else tab.unselectedIcon
 
     val textStyle =
-        if (selected) MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold)
-        else MaterialTheme.typography.labelSmall
+        if (selected) AtSoptTheme.typography.label10b
+        else AtSoptTheme.typography.label10m
 
     val textColor = if (selected) AtSoptTheme.colors.white else AtSoptTheme.colors.gray300
 

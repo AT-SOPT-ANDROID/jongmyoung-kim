@@ -130,8 +130,7 @@ fun SignInScreen(
 
         Text(
             text = stringResource(sign_in_title),
-            style = MaterialTheme.typography.titleLarge.copy(
-                fontWeight = FontWeight(500),
+            style = AtSoptTheme.typography.title22m.copy(
                 color = AtSoptTheme.colors.white,
             )
         )

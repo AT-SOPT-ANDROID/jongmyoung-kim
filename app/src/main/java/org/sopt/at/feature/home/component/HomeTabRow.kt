@@ -66,7 +66,7 @@ private fun HomeTabItem(
 ) {
     Text(
         text = genreTab.genre,
-        style = MaterialTheme.typography.titleMedium.copy(
+        style = AtSoptTheme.typography.body16m.copy(
             color = if (isSelected) AtSoptTheme.colors.white else AtSoptTheme.colors.gray100,
         ),
         modifier = modifier

@@ -129,9 +129,8 @@ private fun HomeScreen(
             ) {
                 Text(
                     text = stringResource(home_large_banner_1),
-                    style = MaterialTheme.typography.titleLarge.copy(
+                    style = AtSoptTheme.typography.title22sb.copy(
                         color = AtSoptTheme.colors.white,
-                        fontWeight = FontWeight.SemiBold,
                     ),
                     modifier = paddedModifier,
                 )
@@ -170,9 +169,8 @@ private fun HomeScreen(
             ) {
                 Text(
                     text = stringResource(home_large_banner_2),
-                    style = MaterialTheme.typography.titleLarge.copy(
+                    style = AtSoptTheme.typography.title22sb.copy(
                         color = AtSoptTheme.colors.white,
-                        fontWeight = FontWeight.SemiBold,
                     ),
                     modifier = paddedModifier,
                 )

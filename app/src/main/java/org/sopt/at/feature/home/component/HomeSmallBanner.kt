@@ -55,14 +55,13 @@ fun HomeSmallBanner(
         ) {
             Text(
                 text = title,
-                style = MaterialTheme.typography.titleLarge.copy(
+                style = AtSoptTheme.typography.title22sb.copy(
                     color = AtSoptTheme.colors.white,
-                    fontWeight = FontWeight.SemiBold,
                 ),
             )
             Text(
                 text = stringResource(see_more),
-                style = MaterialTheme.typography.titleMedium.copy(
+                style = AtSoptTheme.typography.body16m.copy(
                     color = AtSoptTheme.colors.gray300,
                 ),
                 modifier = Modifier.noRippleClickable(onMoreClick),

@@ -36,7 +36,7 @@ fun SignInFooter(
 
     Text(
         text = annotatedString,
-        style = MaterialTheme.typography.labelSmall.copy(
+        style = AtSoptTheme.typography.label10m.copy(
             color = AtSoptTheme.colors.gray300,
         ),
         textAlign = TextAlign.Center,

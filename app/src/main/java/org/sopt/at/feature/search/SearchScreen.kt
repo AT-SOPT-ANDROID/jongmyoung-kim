@@ -37,7 +37,7 @@ fun SearchScreen(
     ) {
         Text(
             text = stringResource(ic_search_desc),
-            style = MaterialTheme.typography.displayLarge.copy(
+            style = AtSoptTheme.typography.display56b.copy(
                 color = AtSoptTheme.colors.white,
             ),
         )

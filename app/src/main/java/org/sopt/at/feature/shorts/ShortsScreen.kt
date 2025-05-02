@@ -37,7 +37,7 @@ fun ShortsScreen(
     ) {
         Text(
             text = stringResource(ic_shorts_desc),
-            style = MaterialTheme.typography.displayLarge.copy(
+            style = AtSoptTheme.typography.display56b.copy(
                 color = AtSoptTheme.colors.white,
             ),
         )
