@@ -11,21 +11,31 @@ private val LocalAtSoptColors = staticCompositionLocalOf<AtSoptColors> {
     error("No AtSoptColors provided")
 }
 
+private val LocalAtSoptTypography = staticCompositionLocalOf<AtSoptTypography> {
+    error("No AtSoptTypography provided")
+}
+
 object AtSoptTheme {
     val colors: AtSoptColors
         @Composable
         @ReadOnlyComposable
         get() = LocalAtSoptColors.current
+    val typography: AtSoptTypography
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalAtSoptTypography.current
 }
 
 @Composable
 fun ProvideAtSoptColors(
     colors: AtSoptColors,
+    typography: AtSoptTypography,
     content: @Composable () -> Unit,
 ) {
     val provideColors = remember { colors.copy() }.apply { update(colors) }
     CompositionLocalProvider(
         LocalAtSoptColors provides provideColors,
+        LocalAtSoptTypography provides typography,
         content = content,
     )
 }
@@ -35,12 +45,13 @@ fun ATSOPTANDROIDTheme(
     content: @Composable () -> Unit,
 ) {
     val colors = AtSoptLightColors()
+    val typography = AtSoptTypography()
 
     ProvideAtSoptColors(
         colors = colors,
+        typography = typography,
     ) {
         MaterialTheme(
-            typography = Typography,
             content = content,
         )
     }
