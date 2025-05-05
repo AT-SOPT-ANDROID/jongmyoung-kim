@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavOptions
 import androidx.navigation.compose.NavHost
 import androidx.navigation.navOptions
 import kotlinx.collections.immutable.toImmutableList
@@ -24,7 +23,6 @@ import org.sopt.at.feature.mypage.navigation.myPageGraph
 import org.sopt.at.feature.mypage.navigation.navigateToMyPage
 import org.sopt.at.feature.search.navigation.searchGraph
 import org.sopt.at.feature.shorts.navigation.shortsGraph
-import org.sopt.at.feature.signin.navigation.SignIn
 import org.sopt.at.feature.signin.navigation.navigateToSignIn
 import org.sopt.at.feature.signin.navigation.signInGraph
 import org.sopt.at.feature.signup.navigation.navigateToSignUp

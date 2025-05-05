@@ -1,7 +1,6 @@
 package org.sopt.at.feature.signin.component
 
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -36,7 +35,7 @@ fun SignInFooter(
 
     Text(
         text = annotatedString,
-        style = MaterialTheme.typography.labelSmall.copy(
+        style = AtSoptTheme.typography.label10m.copy(
             color = AtSoptTheme.colors.gray300,
         ),
         textAlign = TextAlign.Center,

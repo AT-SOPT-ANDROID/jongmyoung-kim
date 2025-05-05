@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,6 +17,7 @@ import org.sopt.at.R.string.sign_in_find_password
 import org.sopt.at.R.string.sign_up
 import org.sopt.at.R.string.vertical_bar
 import org.sopt.at.core.designsystem.theme.ATSOPTANDROIDTheme
+import org.sopt.at.core.designsystem.theme.AtSoptTheme
 import org.sopt.at.core.util.noRippleClickable
 
 @Composable
@@ -34,31 +34,31 @@ fun AccountManagementGroup(
     ) {
         Text(
             text = stringResource(sign_in_find_id),
-            style = MaterialTheme.typography.labelLarge.copy(
+            style = AtSoptTheme.typography.label14m.copy(
                 color = Color.LightGray,
             )
         )
         Text(
             text = stringResource(vertical_bar),
-            style = MaterialTheme.typography.bodyLarge.copy(
+            style = AtSoptTheme.typography.body16m.copy(
                 color = Color.LightGray,
             )
         )
         Text(
             text = stringResource(sign_in_find_password),
-            style = MaterialTheme.typography.labelLarge.copy(
+            style = AtSoptTheme.typography.label14m.copy(
                 color = Color.LightGray,
             )
         )
         Text(
             text = stringResource(vertical_bar),
-            style = MaterialTheme.typography.bodyLarge.copy(
+            style = AtSoptTheme.typography.body16m.copy(
                 color = Color.LightGray,
             )
         )
         Text(
             text = stringResource(sign_up),
-            style = MaterialTheme.typography.labelLarge.copy(
+            style = AtSoptTheme.typography.label14m.copy(
                 color = Color.LightGray,
             ),
             modifier = Modifier.noRippleClickable(navigateToSignUp),

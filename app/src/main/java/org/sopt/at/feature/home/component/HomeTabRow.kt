@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -66,7 +65,7 @@ private fun HomeTabItem(
 ) {
     Text(
         text = genreTab.genre,
-        style = MaterialTheme.typography.titleMedium.copy(
+        style = AtSoptTheme.typography.body16m.copy(
             color = if (isSelected) AtSoptTheme.colors.white else AtSoptTheme.colors.gray100,
         ),
         modifier = modifier

@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -25,7 +24,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
@@ -43,7 +41,6 @@ import org.sopt.at.R.string.id_text
 import org.sopt.at.R.string.password_text
 import org.sopt.at.R.string.sign_in_button
 import org.sopt.at.R.string.sign_in_error
-import org.sopt.at.R.string.sign_in_success
 import org.sopt.at.R.string.sign_in_title
 import org.sopt.at.core.designsystem.common.AtSoptDefaultButton
 import org.sopt.at.core.designsystem.common.AtSoptDefaultTextField
@@ -130,8 +127,7 @@ fun SignInScreen(
 
         Text(
             text = stringResource(sign_in_title),
-            style = MaterialTheme.typography.titleLarge.copy(
-                fontWeight = FontWeight(500),
+            style = AtSoptTheme.typography.title22m.copy(
                 color = AtSoptTheme.colors.white,
             )
         )
