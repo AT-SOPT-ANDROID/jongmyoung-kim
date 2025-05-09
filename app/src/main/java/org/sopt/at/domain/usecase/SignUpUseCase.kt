@@ -1,5 +1,6 @@
 package org.sopt.at.domain.usecase
 
+import org.sopt.at.domain.model.SignUpCredentials
 import org.sopt.at.domain.repository.AuthRepository
 import javax.inject.Inject
 
@@ -9,5 +10,6 @@ class SignUpUseCase @Inject constructor(
     suspend operator fun invoke(
         userId: String,
         userPassword: String,
-    ): Result<Unit> = authRepository.signUp(userId, userPassword)
+        userNickname: String,
+    ): Result<Unit> = authRepository.postSignUp(SignUpCredentials(userId, userPassword, userNickname))
 }
