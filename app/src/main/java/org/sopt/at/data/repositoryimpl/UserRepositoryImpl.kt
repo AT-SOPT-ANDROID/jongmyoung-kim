@@ -14,7 +14,7 @@ class UserRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getUserNickname() = runCatching {
-        userDataSource.getUserNickname().toString()
+        userDataSource.getUserNickname()?.nickname
     }
 
     override suspend fun getAllUserNickname(

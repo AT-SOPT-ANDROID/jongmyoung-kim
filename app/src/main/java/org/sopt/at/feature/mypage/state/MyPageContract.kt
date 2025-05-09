@@ -1,7 +1,7 @@
 package org.sopt.at.feature.mypage.state
 
 data class MyPageState(
-    val userId: String = "",
+    val userNickname: String = "",
 )
 
 sealed interface MyPageSideEffect {

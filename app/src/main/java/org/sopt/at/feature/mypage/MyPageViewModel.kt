@@ -7,7 +7,9 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import org.sopt.at.domain.usecase.GetUserNicknameUseCase
 import org.sopt.at.domain.usecase.SignOutUseCase
 import org.sopt.at.feature.mypage.state.MyPageSideEffect
 import org.sopt.at.feature.mypage.state.MyPageState
@@ -16,7 +18,21 @@ import javax.inject.Inject
 @HiltViewModel
 class MyPageViewModel @Inject constructor(
     private val signOutUseCase: SignOutUseCase,
+    private val getUserNicknameUseCase: GetUserNicknameUseCase,
 ) : ViewModel() {
+
+    init {
+        viewModelScope.launch {
+            getUserNicknameUseCase().onSuccess { result ->
+                result?.let { nickname ->
+                    _uiState.update { it.copy(userNickname = nickname) }
+                }
+            }.onFailure {
+
+            }
+        }
+    }
+
     private val _uiState = MutableStateFlow(MyPageState())
     val uiState = _uiState.asStateFlow()
 
