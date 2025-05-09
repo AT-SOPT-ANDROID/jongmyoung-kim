@@ -24,35 +24,43 @@ class SignUpViewModel @Inject constructor(
     private val _sideEffect = MutableSharedFlow<SignUpSideEffect>()
     val sideEffect = _sideEffect.asSharedFlow()
 
-    fun updateId(id: String) {
-        _uiState.update { it.copy(userId = id) }
-    }
+    fun updateId(id: String) = _uiState.update { it.copy(userId = id) }
 
-    fun updatePassword(password: String) {
-        _uiState.update { it.copy(userPassword = password) }
-    }
+    fun updatePassword(password: String) = _uiState.update { it.copy(userPassword = password) }
 
-    fun updatePage(increment: Int) {
-        _uiState.update { it.copy(page = it.page + increment) }
-    }
+    fun updateNickname(nickname: String) = _uiState.update { it.copy(userNickname = nickname) }
+
+    fun updatePage(increment: Int) = _uiState.update { it.copy(page = it.page + increment) }
 
     fun signUp() = viewModelScope.launch {
-        when (_uiState.value.page) {
-            0 -> {
-                if (_uiState.value.userId.isValidId()) updatePage(1)
-                else _sideEffect.emit(SignUpSideEffect.InvalidId)
-            }
-            1 -> {
-                if (_uiState.value.userPassword.isValidPassword()) {
-                    signUpUseCase(
-                        userId = _uiState.value.userId,
-                        userPassword = _uiState.value.userPassword,
-                    ).onSuccess {
-                        _sideEffect.emit(SignUpSideEffect.SignUpSucceed)
-                    }.onFailure {
-                        _sideEffect.emit(SignUpSideEffect.SignUpFailed)
+        with(_uiState.value) {
+            when (page) {
+                0 -> {
+                    if (userId.isValidId()) updatePage(1)
+                    else _sideEffect.emit(SignUpSideEffect.InvalidId)
+                }
+
+                1 -> {
+                    if (userPassword.isValidPassword()) updatePage(1)
+                    else _sideEffect.emit(SignUpSideEffect.InvalidPassword)
+                }
+
+                2 -> {
+                    if (userNickname.isValidNickname()) {
+                        signUpUseCase(
+                            userId = userId,
+                            userPassword = userPassword,
+                            userNickname = userNickname,
+                        ).onSuccess {
+                            _sideEffect.emit(SignUpSideEffect.SignUpSucceed)
+                        }.onFailure {
+                            android.util.Log.d("SignUpViewModel", "SignUp failed: ${it.message}")
+
+                            _sideEffect.emit(SignUpSideEffect.SignUpFailed)
+                        }
                     }
-                } else _sideEffect.emit(SignUpSideEffect.InvalidPassword)
+                    else _sideEffect.emit(SignUpSideEffect.InvalidNickname)
+                }
             }
         }
     }
@@ -60,9 +68,10 @@ class SignUpViewModel @Inject constructor(
     companion object {
         private fun String.isValidId(): Boolean = EMAIL_REGEX.matches(this)
         private fun String.isValidPassword(): Boolean = PASSWORD_REGEX.matches(this)
+        private fun String.isValidNickname(): Boolean = NICKNAME_REGEX.matches(this)
 
-        val EMAIL_REGEX = "^[a-z0-9]{6,12}$".toRegex()
-        val PASSWORD_REGEX =
-            "^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[~!@#$%^&*])[a-zA-Z0-9~!@#$%^&*]{8,15}$".toRegex()
+        val EMAIL_REGEX = "^[a-zA-Z0-9]{8,20}$".toRegex()
+        val PASSWORD_REGEX = "^[a-zA-Z0-9]{8,20}$".toRegex()
+        val NICKNAME_REGEX = "^[가-힣a-zA-Z0-9]{1,20}$".toRegex()
     }
 }

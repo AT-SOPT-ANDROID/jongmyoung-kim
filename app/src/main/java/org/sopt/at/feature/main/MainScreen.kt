@@ -92,7 +92,7 @@ private fun MainNavHost(
         myPageGraph(
             navigateToSignIn = {
                 val navOptions = navOptions {
-                    popUpTo(navigator.navController.graph.startDestinationId) {
+                    popUpTo(navigator.navController.graph.id) {
                         inclusive = true
                     }
                     launchSingleTop = true
@@ -104,12 +104,28 @@ private fun MainNavHost(
 
         signInGraph(
             navigateToSignUp = navigator.navController::navigateToSignUp,
-            navigateToHome = navigator.navController::navigateToHome,
+            navigateToHome = {
+                val navOptions = navOptions {
+                    popUpTo(navigator.navController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                    launchSingleTop = true
+                }
+                navigator.navController.navigateToHome(navOptions)
+            },
             modifier = modifier,
         )
 
         signUpGraph(
-            navigateToSignIn = navigator.navController::navigateToSignIn,
+            navigateToSignIn = {
+                val navOptions = navOptions {
+                    popUpTo(navigator.navController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                    launchSingleTop = true
+                }
+                navigator.navController.navigateToSignIn(navOptions)
+            },
             navigateUp = navigator.navController::navigateUp,
             modifier = modifier,
         )
