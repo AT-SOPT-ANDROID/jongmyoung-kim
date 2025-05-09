@@ -26,6 +26,7 @@
     <!-- SignIn/Up   -->
     <string name="id_text">아이디</string>
     <string name="password_text">비밀번호</string>
+    <string name="nickname_text">닉네임</string>
 
     <string name="sign_in_title">TVING ID 로그인</string>
     <string name="sign_in_button">로그인하기</string>
@@ -37,13 +38,16 @@
     <string name="sign_in_success">로그인 성공!</string>
 
     <string name="sign_up">회원가입</string>
-    <string name="sign_up_id_title">아이디를 입력해주세요.</string>
-    <string name="sign_up_id_description">영문 소문자 또는 영문 소문자, 숫자 조합 6~12 자리</string>
     <string name="next">다음</string>
+    <string name="sign_up_id_title">아이디를 입력해주세요.</string>
+    <string name="sign_up_id_description">영문 대문자 또는 영문 소문자, 숫자 조합 8~20 자리</string>
     <string name="sign_up_password_title">비밀번호를 입력해주세요.</string>
-    <string name="sign_up_password_description">영문, 숫자, 특수문자(~!@#$%^&amp;*) 조합 8~15자리</string>
+    <string name="sign_up_password_description">영문 대문자 또는 영문 소문자, 숫자 조합 8~20자리</string>
+    <string name="sign_up_nickname_title">닉네임을 입력해주세요.</string>
+    <string name="sign_up_nickname_description">한글, 영문, 숫자 조합 1~20자리</string>
     <string name="sign_up_id_error">아이디 형식이 맞지 않습니다.\n다시 입력해주세요.</string>
     <string name="sign_up_password_error">비밀번호 형식이 맞지 않습니다.\n다시 입력해주세요.</string>
+    <string name="sign_up_nickname_error">닉네임 형식이 맞지 않습니다.\n다시 입력해주세요.</string>
     <string name="sign_up_success">회원가입 성공!</string>
     <string name="sign_up_error">회원가입 실패. 다시 시도해주세요.</string>
 
