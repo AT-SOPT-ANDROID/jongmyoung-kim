@@ -54,7 +54,7 @@ fun SignUpContent(
         onTextChange = onTextChange,
         hint = hint,
         borderColor = AtSoptTheme.colors.gray100,
-        visualTransformation = if (isPasswordVisible || page == 0) VisualTransformation.None else PasswordVisualTransformation(),
+        visualTransformation = if (isPasswordVisible || page == 0 || page == 2) VisualTransformation.None else PasswordVisualTransformation(),
         suffix =  {
             if (page == 1) {
                 Icon(
