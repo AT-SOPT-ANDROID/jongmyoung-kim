@@ -109,7 +109,15 @@ private fun MainNavHost(
         )
 
         signUpGraph(
-            navigateToSignIn = navigator.navController::navigateToSignIn,
+            navigateToSignIn = {
+                val navOptions = navOptions {
+                    popUpTo(navigator.navController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                    launchSingleTop = true
+                }
+                navigator.navController.navigateToSignIn(navOptions)
+            },
             navigateUp = navigator.navController::navigateUp,
             modifier = modifier,
         )
