@@ -104,7 +104,15 @@ private fun MainNavHost(
 
         signInGraph(
             navigateToSignUp = navigator.navController::navigateToSignUp,
-            navigateToHome = navigator.navController::navigateToHome,
+            navigateToHome = {
+                val navOptions = navOptions {
+                    popUpTo(navigator.navController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                    launchSingleTop = true
+                }
+                navigator.navController.navigateToHome(navOptions)
+            },
             modifier = modifier,
         )
 
