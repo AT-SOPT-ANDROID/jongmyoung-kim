@@ -33,6 +33,7 @@ fun SearchRoute(
     viewModel: SearchViewModel = hiltViewModel(),
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val searchText by viewModel.searchText.collectAsStateWithLifecycle()
     val lifecycleOwner = LocalLifecycleOwner.current
 
     LaunchedEffect(viewModel.sideEffect, lifecycleOwner) {
@@ -46,8 +47,8 @@ fun SearchRoute(
 
     SearchScreen(
         uiState = uiState,
+        searchText = searchText,
         onTextChange = viewModel::updateSearchText,
-        onSearchClick = viewModel::searchUserNickname,
         modifier = modifier,
     )
 }
@@ -56,8 +57,8 @@ fun SearchRoute(
 @Composable
 fun SearchScreen(
     uiState: SearchState,
+    searchText: String,
     onTextChange: (String) -> Unit,
-    onSearchClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -68,17 +69,9 @@ fun SearchScreen(
     ) {
         stickyHeader {
             AtSoptDefaultTextField(
-                text = uiState.searchText,
+                text = searchText,
                 onTextChange = onTextChange,
                 hint = stringResource(search_hint),
-                suffix = {
-                    Icon(
-                        imageVector = ImageVector.vectorResource(ic_search_selected_24),
-                        contentDescription = null,
-                        tint = AtSoptTheme.colors.white,
-                        modifier = Modifier.noRippleClickable(onSearchClick),
-                    )
-                }
             )
         }
 
@@ -99,8 +92,8 @@ private fun HistoryScreenPreview() {
     ATSOPTANDROIDTheme {
         SearchScreen(
             uiState = SearchState(),
+            searchText = "",
             onTextChange = {},
-            onSearchClick = {},
         )
     }
 }

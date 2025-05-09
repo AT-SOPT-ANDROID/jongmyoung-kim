@@ -5,7 +5,6 @@ import androidx.compose.runtime.Immutable
 class SearchContract {
     @Immutable
     data class SearchState(
-        val searchText: String = "",
         val searchResult: List<String> = emptyList(),
     )
 
