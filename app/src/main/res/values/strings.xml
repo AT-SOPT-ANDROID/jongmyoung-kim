@@ -59,4 +59,7 @@
     <string name="tving_cash">티빙캐시</string>
     <string name="sign_out">로그아웃</string>
 
+    <!-- Search   -->
+    <string name="search_hint">검색하고자 하는 닉네임을 입력하세요</string>
+
 </resources>
