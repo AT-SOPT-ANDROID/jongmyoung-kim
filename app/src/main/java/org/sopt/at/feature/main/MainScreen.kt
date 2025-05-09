@@ -92,7 +92,7 @@ private fun MainNavHost(
         myPageGraph(
             navigateToSignIn = {
                 val navOptions = navOptions {
-                    popUpTo(navigator.navController.graph.startDestinationId) {
+                    popUpTo(navigator.navController.graph.id) {
                         inclusive = true
                     }
                     launchSingleTop = true
